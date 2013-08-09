@@ -82,6 +82,12 @@ module MercadoPago
     end
 
     #
+    # Check if mode is sandbox or production
+    #
+    def sandbox_mode(mode)
+      @sandbox = mode
+    end
+  
     # Private methods.
     #
     private
