@@ -11,11 +11,7 @@ module MercadoPago
     #
     # This URL is the base for all API calls.
     #
-    if @sandbox.nil or @sandbox == false
-      MERCADOPAGO_URL = 'https://api.mercadolibre.com'
-    else
-      MERCADOPAGO_URL = 'https://api.mercadolibre.com/sandbox'
-    end
+    MERCADOPAGO_URL = 'https://api.mercadolibre.com'
 
     #
     # Makes a POST request to a MercaPago API.
