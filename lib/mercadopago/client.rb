@@ -54,10 +54,6 @@ module MercadoPago
       MercadoPago::Checkout.create_preference(@access_token, data)
     end
 
-    def create_recurrent_preference(data)
-      MercadoPago::Checkout.create_recurrent_preference(@access_token, data)
-    end
-
     #
     # Returns the payment preference.
     #
@@ -65,6 +61,23 @@ module MercadoPago
     #
     def get_preference(preference_id)
       MercadoPago::Checkout.get_preference(@access_token, preference_id)
+    end
+
+    # Creates a recurrent preference
+    def create_recurrent_preference(data)
+      MercadoPago::Recurrent.create_recurrent_preference(@access_token, data)
+    end
+
+    def get_recurrent_preference(preference_id)
+      MercadoPago::Recurrent.get_recurrent_preference(@access_token, preference_id)
+    end
+
+    def update_recurrent_preference(preference_id, data)
+      MercadoPago::Recurrent.update_recurrent_preference(@access_token, preference_id, data)
+    end
+
+    def cancel_recurrent_preference(preference_id)
+      MercadoPago::Recurrent.cancel_recurrent_preference(@access_token, preference_id)
     end
 
     #
