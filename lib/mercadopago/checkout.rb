@@ -19,6 +19,13 @@ module MercadoPago
       MercadoPago::Request.wrap_post("/checkout/preferences?access_token=#{access_token}", payload, headers)
     end
 
+    def self.create_recurrent_preference(access_token, data)
+      payload = JSON.generate(data)
+      headers = { content_type: 'application/json', accept: 'application/json' }
+
+      MercadoPago::Request.wrap_post("/preapproval?access_token=#{access_token}", payload, headers)
+    end
+
     # Returns the hash with the details of certain payment preference.
     #
     # - access_token: the MercadoPago account access token
