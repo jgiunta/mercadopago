@@ -89,7 +89,7 @@ module MercadoPago
       MercadoPago::Collection.notification(@access_token, payment_id)
     end
 
-    def notification(payment_id)
+    def recurrent_notification(payment_id)
       MercadoPago::Collection.recurrent_notification(@access_token, payment_id)
     end
 
