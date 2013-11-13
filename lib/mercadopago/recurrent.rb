@@ -26,6 +26,10 @@ module MercadoPago
       MercadoPago::Request.wrap_put("/preapproval/#{preference_id}?access_token=#{access_token}", payload, headers)
     end
 
+    def self.recurrent_notification(access_token, payment_id)
+      MercadoPago::Request.wrap_get("/preapproval/#{payment_id}?access_token=#{access_token}", { accept: 'application/json' })
+    end
+
   end
 
 end
