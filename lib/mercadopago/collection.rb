@@ -10,11 +10,7 @@ module MercadoPago
     # - payment_id: the id of the payment to be checked.
     #
     def self.notification(access_token, payment_id)
-      if Rails.env == "development"
-        MercadoPago::Request.wrap_get("/sandbox/collections/notifications/#{payment_id}?access_token=#{access_token}", { accept: 'application/json' })
-      else
-        MercadoPago::Request.wrap_get("/collections/notifications/#{payment_id}?access_token=#{access_token}", { accept: 'application/json' })
-      end
+      MercadoPago::Request.wrap_get("/collections/notifications/#{payment_id}?access_token=#{access_token}", { accept: 'application/json' })
     end
 
     #

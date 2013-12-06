@@ -102,13 +102,6 @@ module MercadoPago
       MercadoPago::Collection.search(@access_token, search_hash)
     end
 
-    #
-    # Check if mode is sandbox or production
-    #
-    def sandbox_mode(mode)
-      @sandbox = mode
-    end
-  
     # Private methods.
     #
     private
